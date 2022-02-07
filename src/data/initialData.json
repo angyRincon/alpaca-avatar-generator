@@ -1,0 +1,39 @@
+[
+  {
+    "accessory": "backgrounds",
+    "style": "blue50"
+  },
+  {
+    "accessory": "leg",
+    "style": "default"
+  },
+  {
+    "accessory": "neck",
+    "style": "default"
+  },
+  {
+    "accessory": "nose",
+    "style": "nose"
+  },
+  {
+    "accessory": "ears",
+    "style": "default"
+  },
+
+  {
+    "accessory": "hair",
+    "style": "default"
+  },
+  {
+    "accessory": "accessories",
+    "style": "headphone"
+  },
+  {
+    "accessory": "mouth",
+    "style": "default"
+  },
+  {
+    "accessory": "eyes",
+    "style": "default"
+  }
+]
