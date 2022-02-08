@@ -134,7 +134,9 @@ h1 {
     width: 30%;
 }
 
-.button-accessories-styles {
+.button-accessories-styles,
+.active
+{
     cursor: pointer;
     color: #FBF8F1;
     background-color: transparent;
@@ -149,7 +151,9 @@ h1 {
     transition: 0.2s all;
 }
 
-.button-accessories-styles:hover {
+.button-accessories-styles:hover,
+.active
+{
     border: 2px solid #FF9F45;
     background-color: #FF9F45;
     box-shadow: 2px 2px 2px #F76E11;
