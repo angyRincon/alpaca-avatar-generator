@@ -1,5 +1,7 @@
 import data from "./data";
 import {useState} from "react";
+import download from 'downloadjs'
+import { toPng } from 'html-to-image'
 
 function App() {
     const route = '/assets/alpaca'
@@ -41,12 +43,19 @@ function App() {
         setStyleArray(arrayStyles)
     }
 
+    const downloadImage = () => {
+        const alpacaCanvasNode = document.getElementById('alpaca')
+        toPng(alpacaCanvasNode).then(dataUrl => {
+            download(dataUrl, 'my-alpaca.png')
+        })
+    }
+
     return (
         <>
             <h1>Alpaca generator</h1>
             <div className='container'>
                 <div className='alpaca-container'>
-                    <div className="alpaca-images">
+                    <div className="alpaca-images" id='alpaca'>
                         {
                             styleArray.map(img => (
                                 <img
@@ -57,17 +66,18 @@ function App() {
                             ))
                         }
                     </div>
+
                     <div className="alpaca-buttons">
                         <button onClick={handleRandom}>
                             <i className="fas fa-random"/>
                             Random
                         </button>
-                        <button>
+
+                        <button onClick={downloadImage}>
                             <i className="fas fa-download"/>
                             Download
                         </button>
                     </div>
-
                 </div>
 
                 <div className='buttons-container'>
