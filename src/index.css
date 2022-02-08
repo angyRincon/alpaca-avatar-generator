@@ -12,6 +12,28 @@ body {
     overflow: hidden;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #314d54;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #314d54;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #4b727e;
+}
+
 h1 {
     position: absolute;
     top: 10px;
@@ -124,7 +146,6 @@ h1 {
     color: #FBF8F1;
     font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: 20px;
     margin-left: 10px;
 }
 
@@ -134,11 +155,19 @@ h1 {
     width: 30%;
 }
 
+.buttons-container .buttons-styles {
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 2px;
+}
+
 .button-accessories-styles,
 .active
 {
     cursor: pointer;
     color: #FBF8F1;
+    font-weight: 600;
     background-color: transparent;
     border: 2px solid #B667F1;
     box-shadow: 2px 2px 1px #5B3478;

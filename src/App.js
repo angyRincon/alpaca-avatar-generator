@@ -6,7 +6,7 @@ function App() {
     const [accessory, setAccessory] = useState('hair')
     const [index, setIndex] = useState(0)
     const [styleArray, setStyleArray] = useState(data.initialData)
-    const [selectedStyle, setSelectedStyle] = useState(null )
+    const [selectedStyle, setSelectedStyle] = useState(null)
 
     const handleChangeAccessory = (localAccessory, i) => {
         setIndex(i)
@@ -71,8 +71,8 @@ function App() {
                 </div>
 
                 <div className='buttons-container'>
+                    <h2 className='title'>Accessorize the alpaca's</h2>
                     <div className="buttons-accessory">
-                        <h2 className='title'>Accessorize the alpaca's</h2>
                         {
                             data.buttonsAccessories.map((button, i) => (
                                 <button
@@ -85,8 +85,9 @@ function App() {
                             ))
                         }
                     </div>
+
+                    <h2 className='title'>Style</h2>
                     <div className="buttons-styles">
-                        <h2 className='title'>Style</h2>
                         {
                             data.buttonStyles[index][accessory || 'hair'].map((style, i) => (
                                     <button
