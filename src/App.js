@@ -40,10 +40,11 @@ function App() {
     }
 
     return (
-        <div className='container'>
-            <div className="grid-container">
-                <div className='alpaca-images'>
-                    <div className="images">
+        <>
+            <h1>Alpaca generator</h1>
+            <div className='container'>
+                <div className='alpaca-container'>
+                    <div className="alpaca-images">
                         {
                             styleArray.map(img => (
                                 <img
@@ -54,20 +55,27 @@ function App() {
                             ))
                         }
                     </div>
-                    <div className='buttons'>
-                        <button onClick={handleRandom}>Random</button>
-                        <button>Download</button>
+                    <div className="alpaca-buttons">
+                        <button onClick={handleRandom}>
+                            <i className="fas fa-random"/>
+                            Random
+                        </button>
+                        <button>
+                            <i className="fas fa-download"/>
+                            Download
+                        </button>
                     </div>
+
                 </div>
 
-                <div className='buttonsContainer'>
-                    <h2>Accessorize the alpaca</h2>
-                    <div className='button-accessories-container'>
+                <div className='buttons-container'>
+                    <div className="buttons-accessory">
+                        <h2 className='title'>Accessorize the alpaca's</h2>
                         {
                             data.buttonsAccessories.map((button, i) => (
                                 <button
                                     key={button}
-                                    className='button-accessories'
+                                    className='button-accessories-styles'
                                     onClick={() => handleChangeAccessory(button, i)}
                                 >
                                     {button}
@@ -75,14 +83,13 @@ function App() {
                             ))
                         }
                     </div>
-
-                    <h2>Style</h2>
-                    <div>
+                    <div className="buttons-styles">
+                        <h2 className='title'>Style</h2>
                         {
                             data.buttonStyles[index][accessory || 'hair'].map(style => (
                                     <button
                                         key={style}
-                                        className='button-accessories'
+                                        className='button-accessories-styles'
                                         onClick={() => handleChangeStyle(style)}
                                     >
                                         {style}
@@ -93,7 +100,59 @@ function App() {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
+        /* <div className='container'>
+             <div className="grid-container">
+                 <div className='alpaca-images'>
+                     {
+                         styleArray.map(img => (
+                             <img
+                                 key={img.accessory}
+                                 src={`${route}/${img.accessory}/${img.style}.png`}
+                                 alt={`${img.accessory}-${img.style}`}
+                             />
+                         ))
+                     }
+                     <div className='buttons'>
+                         <button onClick={handleRandom}>Random</button>
+                         <button>Download</button>
+                     </div>
+                 </div>
+
+                 <div className='buttonsContainer'>
+                     <h2>Accessorize the alpaca</h2>
+                     <div className='button-accessories-container'>
+                         {
+                             data.buttonsAccessories.map((button, i) => (
+                                 <button
+                                     key={button}
+                                     className='button-accessories'
+                                     onClick={() => handleChangeAccessory(button, i)}
+                                 >
+                                     {button}
+                                 </button>
+                             ))
+                         }
+                     </div>
+
+                     <h2>Style</h2>
+                     <div>
+                         {
+                             data.buttonStyles[index][accessory || 'hair'].map(style => (
+                                     <button
+                                         key={style}
+                                         className='button-accessories'
+                                         onClick={() => handleChangeStyle(style)}
+                                     >
+                                         {style}
+                                     </button>
+                                 )
+                             )
+                         }
+                     </div>
+                 </div>
+             </div>
+         </div>*/
     );
 }
 

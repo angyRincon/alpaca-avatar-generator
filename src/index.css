@@ -8,74 +8,152 @@
 }
 
 body {
-    background-color: #c4c4c4;
+    background-color: #395B64;
+    overflow: hidden;
+}
+
+h1 {
+    position: absolute;
+    top: 10px;
+    left: 14rem;
+    font-size: 50px;
+    padding: 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    color: #FBF8F1;
 }
 
 .container {
     display: flex;
+    justify-content: center;
     align-items: center;
+    gap: 50px;
     height: 100vh;
+    margin-top: 25px;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 100%;
-}
-
-.alpaca-images {
+.alpaca-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 20px;
 }
 
-.alpaca-images .images img{
+.alpaca-container .alpaca-images {
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+    align-items: center;
+}
+
+.alpaca-container .alpaca-images img {
+    height: 400px;
+    width: 400px;
+    display: block;
     position: absolute;
-    top: 70px;
-    left: 150px;
-    width: 30%;
-    height: auto;
-    object-fit: contain;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
-.buttonsContainer {
+.alpaca-container .alpaca-buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.alpaca-container .alpaca-buttons button {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px;
+    background-color: #8A39E1;
+    color: #FBF8F1;
+    box-shadow: 2px 2px 3px #451C70;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 20px;
+    width: 50%;
+    transition: 0.3s ease-in-out;
+}
+
+.alpaca-container .alpaca-buttons button:hover {
+    background-color: #F76E11;
+    transform: scale(1.01);
+    box-shadow: 2px 2px 2px #9A450B;
+}
+
+.alpaca-container .alpaca-buttons button:after {
+    content: "";
+    background: #FF9F45;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    border-radius: 20%;
+    opacity: 0;
+    transition: all 1s
+}
+
+.alpaca-container .alpaca-buttons button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+.alpaca-container .alpaca-buttons button i {
+    margin-right: 10px;
+}
+
+.buttons-container {
+    display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
 }
 
-.buttonsContainer h2 {
+.buttons-container h2 {
+    color: #FBF8F1;
+    font-weight: 700;
     text-transform: uppercase;
-    font-weight: 900;
-    font-size: 20px;
-    margin: 10px 0;
+    margin-bottom: 20px;
+    margin-left: 10px;
 }
 
-.button-accessories-container {
-    margin-bottom: 15px;
+.buttons-container {
     display: flex;
     flex-wrap: wrap;
+    width: 30%;
 }
 
-.button-accessories {
-    color: #5819c4;
-    background-color: transparent;
-    border: 2px solid #5819c4;
-    font-weight: 600;
-    font-size: 15px;
-    padding: 10px;
-    margin-bottom: 10px;
-    margin-right: 10px;
+.button-accessories-styles {
     cursor: pointer;
-    width: 120px;
+    color: #FBF8F1;
+    background-color: transparent;
+    border: 2px solid #B667F1;
+    box-shadow: 2px 2px 1px #5B3478;
+    border-radius: 40px;
+    padding: 15px 30px;
     text-transform: capitalize;
-    border-radius: 30px;
-    align-items: center;
-    transition: 0.2s ease-in-out;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    transition: 0.2s all;
 }
 
-.button-accessories:hover {
-    background-color: #5819c4;
-    color: #ffffff;
+.button-accessories-styles:hover {
+    border: 2px solid #FF9F45;
+    background-color: #FF9F45;
+    box-shadow: 2px 2px 2px #F76E11;
+    color: #451C70;
     transform: scale(1.05);
 }
+
