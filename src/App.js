@@ -4,7 +4,7 @@ import download from 'downloadjs'
 import { toPng } from 'html-to-image'
 
 function App() {
-    const route = '/assets/alpaca'
+    const route = 'assets/alpaca'
     const [accessory, setAccessory] = useState('hair')
     const [index, setIndex] = useState(0)
     const [styleArray, setStyleArray] = useState(data.initialData)
